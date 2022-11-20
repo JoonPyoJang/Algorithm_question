@@ -28,10 +28,8 @@ completion = ["stanko", "ana", "mislav"]
 print(solution(participant, completion))
 
 '''
-class Dict:
-    def __init__(self):
-        self.items = [None] * 8
-
-    def put(self, key, value):
-        # 구현해보세요!
-        return
+import collections
+def solution(participant, completion):
+    answer = collections.Counter(participant) - collections.Counter(completion)
+    return list(answer.keys())[0]
+print(solution(["marina", "josipa", "nikola", "vinko", "filipa"], ["josipa", "filipa", "marina", "nikola"]))

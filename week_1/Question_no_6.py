@@ -25,7 +25,7 @@ def solution(n, lost, reserve):
         a= set(reverse_num)
         b= set(lost)
         c = a & b
-        
+        print(c)
         for j in c:
             print(int(j))
             if  j in lost:
@@ -36,5 +36,5 @@ def solution(n, lost, reserve):
     answer = n-len(lost)
     return answer
 
-print(solution(5,[2,4],[3]))
+print(solution(9,[1,2,4,5],[1,3,5,7,8,9]))
 
