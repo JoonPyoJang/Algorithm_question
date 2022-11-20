@@ -1,9 +1,20 @@
 
-# sorted
-arr = [5, 8, 1, 2, 4, 9, 3, 7, 6]
-print("sorted data: ", sorted(arr))
-print("input data: ", arr)
-# sort()
-arr = [5, 8, 1, 2, 4, 9, 3, 7, 6]
-arr.sort()
-print("input data: ", arr)
+'''
+문제 설명
+문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요.
+
+제한사항
+s의 길이는 1 이상 5이하입니다.
+s의 맨앞에는 부호(+, -)가 올 수 있습니다.
+s는 부호와 숫자로만 이루어져있습니다.
+s는 "0"으로 시작하지 않습니다.
+
+풀기전 생각해보기
+int형으로 변환해준다.
+'''
+
+def solution(s):
+    
+    return int(s)
+
+print(solution(-1234))
