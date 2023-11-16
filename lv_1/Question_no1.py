@@ -22,8 +22,22 @@ callings는 players의 원소들로만 이루어져 있습니다.
 생각적어보기
 1. players 리스트에서 calling에 이름이 불리면 player 리스트의 이름을 한칸 앞으로 보낸다.
 2. for 문으로 calling에 리스트를 돌리고 해당 player를 앞으로 보낸다.
+
+느낀점
+리스트에서 해당 인덱스를 찾는건 리스트의 길이만큼의 시간이 계속 들지만 딕셔너리로 만들고 딕셔너리에서 해당 위치를 찾는건 훨씬 빨라
+내가 처음에 짠 코드에서는 시간이 오래 걸린듯하다. index = players.index(i)이 줄이 for 문에서 돌아갔을때 리스트 길이 만큼 제곱으로 돌아가는 수준
+따라서 시간초과가 나온거 같다. 링크드리스트와 배열의 차이인듯 하다.
+
 '''
 # 내가 짠 코드 (시간초과)
+def solution(players, callings):
+    for i in callings:
+        index = players.index(i)
+        if index > 0 :
+            players[index-1], players[index] = players[index], players[index-1]
+    return players
+
+# 수정한 코드
 def solution(players, callings):
     result = {player: i for i, player in enumerate(players)}
     for i in callings:
@@ -34,9 +48,6 @@ def solution(players, callings):
     return players
 
 
-
-
-
 players = ["mumu", "soe", "poe", "kai", "mine"]
-callings = ["kai", "kai", "mine", "mine"]
+callings = ["mumu","kai", "kai", "mine", "mine"]
 solution(players, callings)

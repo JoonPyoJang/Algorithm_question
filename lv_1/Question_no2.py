@@ -23,12 +23,16 @@ yearning[i]는 i번째 사람의 그리움 점수입니다.
 3 ≤ photo[i]의 원소(문자열)의 길이 ≤ 7
 photo[i]의 원소들은 알파벳 소문자로만 이루어져 있습니다.
 photo[i]의 원소들은 중복된 값이 들어가지 않습니다.
+
+생각적어보기
+제공된 name 과 yearning을 딕셔너리로 만들고 리스트에서 이름이 나올때 total에 값을 더하고 최종 값 리스트에 더 해준다.
 '''
 
 name = ["may", "kein", "kain", "radi"]
 yearning = [5, 10, 1, 3]
 photo = [["may", "kein", "kain", "radi"],["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]
 
+#내가 짠 코드
 def solution(name, yearning, photo):
     result = {name0: yearning[num] for num, name0 in enumerate(name)}
     total_list = []
@@ -36,13 +40,10 @@ def solution(name, yearning, photo):
     for list in photo:
         total_num = 0
         for n in list:
-            print(n)
             if(result.get(n)):
                 total_num += result[n]
         total_list.append(total_num)
-        print(total_list)
 
-    answer = []
-    return answer
+    return total_list
 
 solution(name, yearning, photo)
